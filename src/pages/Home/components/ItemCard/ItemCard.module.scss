@@ -1,0 +1,60 @@
+@import '../../../../styles/variables';
+
+.container {
+  height: 435px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-15px);
+  }
+}
+
+.title {
+  margin: 25px 0;
+}
+
+.price {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  svg {
+    color: $black;
+    padding: 0;
+
+    &:first-child {
+      border: none;
+    }
+  }
+}
+
+.image {
+  width: 250px;
+  height: 210px;
+  cursor: pointer;
+}
+
+.button {
+  height: 50px;
+  font-weight: $font-bold;
+  cursor: pointer;
+  background-color: $white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

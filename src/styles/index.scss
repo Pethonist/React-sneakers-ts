@@ -1,0 +1,82 @@
+@import 'normalize.css';
+@import './variables';
+
+body {
+  font-family: $inter, 'sans-serif';
+  font-weight: $font-bold;
+  font-size: $font-sm;
+  background-color: $body-bg;
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+}
+
+header {
+  border-radius: 40px 40px 0 0;
+  background-color: white;
+  padding: 50px 35px 50px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $light-gray;
+}
+
+main {
+  background-color: $white;
+  padding: 100px 100px 50px 100px;
+
+  svg {
+    padding: 8px;
+    color: $dark-gray;
+
+    &:first-child {
+      border-right: 1px solid $light-gray;
+    }
+
+    &:last-child {
+      border-left: 1px solid $light-gray;
+    }
+  }
+
+  input {
+    width: 260px;
+    padding-left: 8px;
+    border: none;
+    color: $dark-gray;
+    font-weight: $font-bold;
+
+    &::placeholder {
+      color: $dark-gray;
+    }
+
+    &:focus {
+      outline: none;
+      width: 520px;
+    }
+  }
+}
+
+footer {
+  border-top: 1px solid $light-gray;
+  background-color: $white;
+  color: $dark-gray;
+  font-size: $font-md;
+  padding: 50px 100px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+svg {
+  cursor: pointer;
+  color: $black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

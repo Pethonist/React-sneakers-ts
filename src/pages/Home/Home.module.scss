@@ -1,0 +1,21 @@
+.img {
+  display: flex;
+  justify-content: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  column-gap: 67px;
+  row-gap: 75px;
+}
+
+.errorMsg {
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 100px;
+  text-align: center;
+}

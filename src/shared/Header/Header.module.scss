@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.users {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+
+  &RouteBtns {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
