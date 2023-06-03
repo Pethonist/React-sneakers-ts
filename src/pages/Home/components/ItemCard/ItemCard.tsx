@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { FiHeart } from 'react-icons/fi';
+import classNames from 'classnames';
 import { useAppDispatch } from '../../../../store/store';
 
 import { CartItem, Sneaker } from '../../../../types/types';
@@ -45,16 +46,21 @@ const ItemCard: FC<IItemCardProps> = ({ id, title, price, imageUrl }) => {
       imageUrl,
     };
 
-    if (!isItemInWishlist) {
-      dispatch(addToWishlist(item));
-    } else {
+    if (isItemInWishlist) {
       dispatch(removeFromWishlist(id));
+    } else {
+      dispatch(addToWishlist(item));
     }
   };
 
+  const wishlistBtnStyles = classNames({
+    [styles.icon]: true,
+    [styles.iconColored]: isItemInWishlist,
+  });
+
   return (
     <div className={styles.container}>
-      <div className={styles.icon} onClick={onClickLike}>
+      <div onClick={onClickLike} className={wishlistBtnStyles}>
         <FiHeart size={SIZE} />
       </div>
       <ItemImage img={imageUrl} title={title} styles={{ image: styles.image }} />
