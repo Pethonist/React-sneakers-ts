@@ -2,12 +2,16 @@ import { FC } from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { useAppDispatch } from '../../../../store/store';
 
-import { CartItem } from '../../../../types/types';
+import { CartItem, Sneaker } from '../../../../types/types';
 import { SIZE } from '../../../../constants/constants';
 import { addItem } from '../../../../store/Cart/cartSlice';
 
 import { ItemImage, Button } from '../../../../shared';
 import styles from './ItemCard.module.scss';
+import { addToWishlist } from '../../../../store/Wishlist/wishlistSlice';
+import { useSelector } from 'react-redux';
+import { selectWishlist } from '../../../../store/Wishlist/selectors';
+import { removeFromWishlist } from '../../../../store/Wishlist/wishlistSlice';
 
 interface IItemCardProps {
   id: number;
@@ -18,6 +22,9 @@ interface IItemCardProps {
 
 const ItemCard: FC<IItemCardProps> = ({ id, title, price, imageUrl }) => {
   const dispatch = useAppDispatch();
+  const { items } = useSelector(selectWishlist);
+
+  const isItemInWishlist = items.find((obj) => obj.id === id);
 
   const onClickAdd = () => {
     const item: CartItem = {
@@ -30,9 +37,24 @@ const ItemCard: FC<IItemCardProps> = ({ id, title, price, imageUrl }) => {
     dispatch(addItem(item));
   };
 
+  const onClickLike = () => {
+    const item: Sneaker = {
+      id,
+      title,
+      price,
+      imageUrl,
+    };
+
+    if (!isItemInWishlist) {
+      dispatch(addToWishlist(item));
+    } else {
+      dispatch(removeFromWishlist(id));
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.icon}>
+      <div className={styles.icon} onClick={onClickLike}>
         <FiHeart size={SIZE} />
       </div>
       <ItemImage img={imageUrl} title={title} styles={{ image: styles.image }} />
