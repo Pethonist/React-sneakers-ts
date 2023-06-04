@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import classNames from 'classnames';
+import rootStyles from './Button.module.scss';
 
 interface IButtonProps {
   styles?: CSSModuleClasses;
@@ -7,8 +9,16 @@ interface IButtonProps {
 }
 
 const Button: FC<IButtonProps> = ({ text, styles, onClick }) => {
+  const btnClass = classNames(rootStyles.root, styles?.button);
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
-    <button className={styles?.button} onClick={onClick}>
+    <button className={btnClass} onClick={handleClick}>
       {text}
     </button>
   );

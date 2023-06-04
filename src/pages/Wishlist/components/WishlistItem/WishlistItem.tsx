@@ -37,7 +37,7 @@ const WishlistItem: FC<IWishlistItemProps> = ({ id, title, price, imageUrl }) =>
       <ItemImage img={imageUrl} title={title} styles={{ image: styles.image }} />
       <p className={styles.title}>{title}</p>
       <div className={styles.buttons}>
-        <Button text='Add ot cart' styles={{ button: styles.button }} onClick={onClickAdd} />
+        <Button text='Add to cart' styles={{ button: styles.button }} onClick={onClickAdd} />
         <Button
           text='Remove from wishlist'
           styles={{ button: styles.button }}

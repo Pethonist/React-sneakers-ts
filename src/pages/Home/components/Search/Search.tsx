@@ -21,8 +21,9 @@ const Search: FC = () => {
   );
 
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    updateSearchValue(event.target.value);
-    setValue(event.target.value);
+    const inputValue = event.target.value;
+    updateSearchValue(inputValue);
+    setValue(inputValue);
   };
 
   const onClickClear = () => {

@@ -4,11 +4,17 @@ interface IItemImageProps {
   img: string;
   title: string;
   styles?: CSSModuleClasses;
-  onClick?: (id: number) => void;
+  onClick?: () => void;
 }
 
 const ItemImage: FC<IItemImageProps> = ({ img, title, styles, onClick }) => {
-  return <img src={img} alt={title} className={styles?.image} onClick={onClick} />;
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  return <img src={img} alt={title} className={styles?.image} onClick={handleClick} />;
 };
 
 export default ItemImage;

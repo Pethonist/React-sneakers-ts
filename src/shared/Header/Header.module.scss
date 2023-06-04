@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .logo {
   display: flex;
   align-items: center;
@@ -13,5 +15,17 @@
     display: flex;
     align-items: center;
     gap: 30px;
+
+    @media screen and (max-width: $screen-esm) {
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: $screen-esm) {
+    gap: 50px;
+
+    svg {
+      height: 25px;
+    }
   }
 }

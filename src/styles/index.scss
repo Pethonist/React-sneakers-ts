@@ -9,6 +9,19 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 160px;
+
+  @media screen and (max-width: $screen-md) {
+    margin-top: 130px;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: $screen-esm) {
+    font-size: $font-esm;
+    margin-top: 50px;
+  }
 }
 
 header {
@@ -19,6 +32,13 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $light-gray;
+
+  @media screen and (max-width: $screen-sm) {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 0;
+  }
 }
 
 main {
@@ -54,6 +74,9 @@ main {
       width: 520px;
     }
   }
+
+  @media screen and (max-width: 280px) {
+  }
 }
 
 footer {
@@ -65,6 +88,22 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 100px;
+
+  @media screen and (max-width: $screen-md) {
+    padding: 25px 0;
+    gap: 50px;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 25px 0;
+    gap: 50px;
+    // flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: $screen-esm) {
+    padding: 25px 0;
+    gap: 50px;
+  }
 }
 
 a {

@@ -3,12 +3,16 @@ import { useSelector } from 'react-redux';
 
 import { selectCart } from '../../store/Cart/selectors';
 
-import { CartItem } from './components';
+import { CartItem, CartEmpty } from './components';
 import { Button } from '../../shared';
 import styles from './Cart.module.scss';
 
 const Cart: FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
+
+  if (!items.length) {
+    return <CartEmpty />;
+  }
 
   return (
     <section className={styles.container}>

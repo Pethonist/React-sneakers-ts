@@ -13,23 +13,23 @@ import { Error, Search, Pagination, ItemCard, Skeleton } from './components';
 import styles from './Home.module.scss';
 
 const Home: FC = () => {
-  const { items, status } = useSelector(selectSneakersData);
-
-  const { searchValue, currentPage } = useSelector(selectFilter);
   const dispatch = useAppDispatch();
+  const { items, status } = useSelector(selectSneakersData);
+  const { searchValue, currentPage } = useSelector(selectFilter);
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
 
-  const getItems = async () => {
-    dispatch(fetchSneakers({ searchValue, currentPage }));
-  };
+  // const getItems = async () => {
+  //   dispatch(fetchSneakers({ searchValue, currentPage }));
+  // };
 
   useEffect(() => {
-    getItems();
+    // getItems();
+    dispatch(fetchSneakers({ searchValue, currentPage }));
     window.scrollTo(0, 0);
-  }, [searchValue, currentPage]);
+  }, [searchValue, currentPage, dispatch]);
 
   const sneakers = items.map((item) => <ItemCard key={item.id} {...item} />);
   const skeleton = [...new Array(12)].map((_, index) => <Skeleton key={index} />);

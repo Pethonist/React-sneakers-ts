@@ -1,11 +1,41 @@
+@import '../../styles/variables';
+
 .users {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: $screen-sm) {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  @media screen and (max-width: $screen-esm) {
+    font-size: $font-sm;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: $screen-esm) {
+    svg {
+      height: $font-sm;
+    }
+  }
+}
+
+.rights {
+  @media screen and (max-width: $screen-sm) {
+    text-align: center;
+  }
+
+  @media screen and (max-width: $screen-esm) {
+    text-align: center;
+    font-size: $font-sm;
+  }
 }

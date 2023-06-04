@@ -13,22 +13,18 @@ import { SIZE } from '../../constants/constants';
 import styles from './Footer.module.scss';
 
 const SOCIAL_MEDIAS = [
-  { id: 0, icon: <TbBrandTelegram /> },
-  { id: 1, icon: <TbBrandFacebook /> },
-  { id: 2, icon: <TbBrandInstagram /> },
-  { id: 3, icon: <TbBrandTwitter /> },
-  { id: 4, icon: <TbBrandYoutube /> },
+  <TbBrandTelegram />,
+  <TbBrandFacebook />,
+  <TbBrandInstagram />,
+  <TbBrandTwitter />,
+  <TbBrandYoutube />,
 ];
 
-const CONTACT_US = [
-  { id: 0, icon: <FiMessageSquare /> },
-  { id: 1, icon: <FiMail /> },
-  { id: 2, icon: <FiPhoneOutgoing /> },
-];
+const CONTACT_US = [<FiMessageSquare />, <FiMail />, <FiPhoneOutgoing />];
 
 const Footer: FC = () => {
   const handleClick = () => {
-    alert('Its not available yet');
+    alert("It's not available yet");
   };
 
   return (
@@ -37,7 +33,7 @@ const Footer: FC = () => {
         <div>
           <p>We in social networks:</p>
           <div className={styles.icons}>
-            {SOCIAL_MEDIAS.map(({ id, icon }) =>
+            {SOCIAL_MEDIAS.map((icon, id) =>
               cloneElement(icon, { key: id, size: SIZE, onClick: handleClick })
             )}
           </div>
@@ -45,13 +41,13 @@ const Footer: FC = () => {
         <div>
           <p>Contact us:</p>
           <div className={styles.icons}>
-            {CONTACT_US.map(({ id, icon }) =>
+            {CONTACT_US.map((icon, id) =>
               cloneElement(icon, { key: id, size: SIZE, onClick: handleClick })
             )}
           </div>
         </div>
       </section>
-      <section>
+      <section className={styles.rights}>
         <p>© All rights reserved</p>
         <p>2023-2023, Ukraine</p>
       </section>

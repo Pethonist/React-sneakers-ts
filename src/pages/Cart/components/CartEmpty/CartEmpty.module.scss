@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.container {
+  text-align: center;
+  font-size: $font-bg;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #a5d364;
+}
