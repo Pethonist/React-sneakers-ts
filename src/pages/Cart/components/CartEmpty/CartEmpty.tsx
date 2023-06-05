@@ -14,7 +14,7 @@ const CartEmpty: FC = () => {
   return (
     <div className={styles.container}>
       <p>Sorry, your cart is empty😥😥😥</p>
-      <img src={cartEmptyImg} alt='Empty cart image' />
+      <img loading='lazy' src={cartEmptyImg} alt='Empty cart image' />
       <p>To make an order push the button below:</p>
       <Button text='Make order' styles={{ button: styles.button }} onClick={clickHandler} />
     </div>

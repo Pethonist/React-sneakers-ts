@@ -16,6 +16,10 @@
   &:hover {
     transform: translateY(-15px);
   }
+
+  @media screen and (max-width: $screen-sm) {
+    height: auto;
+  }
 }
 
 .title {
@@ -60,7 +64,11 @@
 .image {
   width: 250px;
   height: 210px;
-  cursor: pointer;
+
+  @media screen and (max-width: $screen-sm) {
+    width: 60vw;
+    height: auto;
+  }
 }
 
 .button {

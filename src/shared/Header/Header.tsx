@@ -17,7 +17,7 @@ const Header: FC = () => {
   return (
     <header>
       <Link to='/' className={styles.logo}>
-        <img src={logo} alt='Logo' />
+        <img loading='lazy' src={logo} alt='Logo' />
         <p>React sneakers</p>
       </Link>
       <section className={styles.users}>

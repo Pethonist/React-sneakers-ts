@@ -19,6 +19,16 @@
   height: 210px;
   cursor: pointer;
   text-align: center;
+
+  @media screen and (max-width: $screen-md) {
+    width: 30vw;
+    height: auto;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    width: 60vw;
+    height: auto;
+  }
 }
 
 .buttons {
