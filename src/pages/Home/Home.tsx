@@ -47,9 +47,9 @@ const Home: FC = () => {
           </section>
           <Search />
           <section className={styles.items}>{status === 'loading' ? skeleton : sneakers}</section>
-          {/* <section className={styles.pagination}>
+          <section className={styles.pagination}>
             <Pagination currentPage={currentPage} onChangePage={onChangePage} />
-          </section> */}
+          </section>
         </>
       )}
     </>
