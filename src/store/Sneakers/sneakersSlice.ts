@@ -28,5 +28,4 @@ const sneakersSlice = createSlice({
   },
 });
 
-// export const {} = sneakersSlice.actions;
 export default sneakersSlice.reducer;

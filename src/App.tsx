@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import { Home, User } from './pages';
+import { Home } from './pages';
 
 const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ './pages/Cart/Cart'));
+const User = lazy(() => import(/* webpackChunkName: "User" */ './pages/User/User'));
 const Wishlist = lazy(() => import(/* webpackChunkName: "Wishlist" */ './pages/Wishlist/Wishlist'));
 
 function App() {
@@ -19,7 +20,14 @@ function App() {
             </Suspense>
           }
         />
-        {/* <Route path='user' element={<User />} /> */}
+        <Route
+          path='user'
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <User />
+            </Suspense>
+          }
+        />
         <Route
           path='wishlist'
           element={
